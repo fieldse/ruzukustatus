@@ -26,4 +26,10 @@ function Status({ update = {} }) {
   )
 }
 
-export { Status, StatusUpdates }
+function Test() {
+  return (
+    <div>TEST</div>
+  )
+}
+
+export { Status, StatusUpdates, Test }

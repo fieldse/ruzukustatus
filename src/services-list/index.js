@@ -6,20 +6,23 @@ function ServicesList({ services = [] }) {
       <h3 className="rz-external-services__header rz-section-heading">External Services</h3>
       { services.map( ({status, name}, i) => {
         return (
-          <li key={i} className={`rz-external-services__item${statusClassName(status)}`}>{ name }</li>
+          <li key={i} { ...statusAttributes(status) }>{ name }</li>
         )
       })}
     </ul>
   );
 }
 
-function statusClassName(status) {
-  const statusGrid = {
+function statusAttributes(status) {
+  const statusCss = {
     'ok': ' ok',
     'issue': ' issue',
     'loading': ' loading'
   }
-  return statusGrid[status]
+  const statusAttr = {
+    'issue': { 'aria-label': 'intermittent issues' }
+  }
+  return { className: `rz-external-services__item${statusCss[status]}`, ...statusAttr[status] }
 }
 
 export { ServicesList };

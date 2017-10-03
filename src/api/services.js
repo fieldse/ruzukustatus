@@ -2,7 +2,7 @@ import { getJson } from './helpers';
 const servicesList = [
   {
     name: 'Amazon Web Services',
-    statusUrl: 'http://status.aws.amazon.com/data.json',
+    statusUrl: 'https://status.aws.amazon.com/data.json',
     status: 'ok'
   },
   {

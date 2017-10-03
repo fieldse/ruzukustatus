@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import { services, getPlivoStatus, getTokBoxStatus, getFilepickerStatus, getAWSStatus } from './api/services';
 import { ServicesList } from './services-list';
-import { Status, StatusUpdates } from './status';
+import { Status, StatusUpdates } from './status/index';
 import { updateServiceStatus } from './reducers';
-const updates = [
-  {
-    title: 'Everything is working normally',
-    date: '10-1-2017'
-  }
-]
+import { updates } from './status.json';
+import { processDates } from './helpers/process-dates';
 
 class App extends Component {
   constructor(props) {
@@ -21,9 +17,10 @@ class App extends Component {
   }
   componentDidMount() {
     this.updateServices();
+    const updateList = processDates(updates);
     this.setState(() => {
       return {
-        updates: updates,
+        updates: updateList,
         services: services()
       }
     })
@@ -63,11 +60,10 @@ class App extends Component {
     return (
       <div className="rz-content rz-page__content">
         <Status update={this.state.updates[0]} />
-        <StatusUpdates updates={this.state.updates}/>
         <ServicesList services={this.state.services} />
+        <StatusUpdates updates={this.state.updates}/>
       </div>
     );
   }
 }
-
 export default App;
