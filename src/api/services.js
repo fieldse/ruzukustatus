@@ -33,7 +33,7 @@ async function getFilepickerStatus() {
 }
 
 async function getAWSStatus() {
-  return await getJson('http://status.aws.amazon.com/data.json')
+  return await getJson('https://status.aws.amazon.com/data.json')
     .then(processAWSStatus)
 }
 
