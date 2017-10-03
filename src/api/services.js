@@ -60,7 +60,7 @@ function processStatusPage({page_status, components}) {
 
 function processAWSStatus({current}) {
   return {
-    name: 'Amazon Web Services',
+    name: 'Amazon Web Services!',
     status: current.length ? 'issue' : 'ok'
   }
 }
