@@ -3,7 +3,7 @@ const servicesList = [
   {
     name: 'Amazon Web Services',
     statusUrl: 'https://status.aws.amazon.com/data.json',
-    status: 'ok'
+    status: 'loading'
   },
   {
     name: 'TokBox',
@@ -60,7 +60,7 @@ function processStatusPage({page_status, components}) {
 
 function processAWSStatus({current}) {
   return {
-    name: 'Amazon Web Services!',
+    name: 'Amazon Web Services',
     status: current.length ? 'issue' : 'ok'
   }
 }
