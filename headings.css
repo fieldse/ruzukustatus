@@ -1,0 +1,80 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  line-height: 1.4;
+}
+
+h1 a,h2 a,h3 a,h4 a,h5 a {
+  text-decoration: none;
+}
+.rz-link, a {
+  color: var(--c-link);
+  text-decoration: underline;
+  border: 0;
+  font-size: 1em;
+  background: transparent;
+}
+.rz-link:hover, a:hover {
+  opacity: .9;
+}
+h1,
+.rz-display {
+  font-size: 2.808em;
+  line-height: 48px;
+  line-height: 1.2;
+}
+
+.rz-display {
+  margin-bottom: 16px;
+}
+
+h2,
+.rz-secondary-display {
+  font-size: 2.122em;
+  line-height: 1.17;
+}
+
+.rz-secondary-display {
+  margin-bottom: 16px;
+}
+
+h3,
+.rz-headline {
+  font-size: 1.498em;
+  line-height: 1.25;
+}
+
+.rz-subheading {
+  font-size: 0.998em;
+  line-height: 1.5;
+  display: block;
+}
+.rz-secondary-subheading {
+  font-size: 0.936em;
+  line-height: .6;
+}
+.rz-logo,
+.rz-ruzuku-logo {
+  font-family: "ff-cocon-web-pro";
+  text-decoration: none;
+}
+
+p,
+.rz-body {
+  line-height: 1.58;
+  margin-bottom: 8px;
+}
+
+.rz-body {
+  font-size: 0.874em;
+}
+
+nav {
+  line-height: 1;
+}
+
+strong {
+  font-weight: 700;
+}
