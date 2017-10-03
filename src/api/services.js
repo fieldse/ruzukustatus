@@ -1,10 +1,10 @@
 import { getJson } from './helpers';
 const servicesList = [
-  {
-    name: 'Amazon Web Services',
-    statusUrl: 'https://status.aws.amazon.com/data.json',
-    status: 'loading'
-  },
+  // {
+  //   name: 'Amazon Web Services',
+  //   statusUrl: 'https://status.aws.amazon.com/data.json',
+  //   status: 'loading'
+  // },
   {
     name: 'TokBox',
     statusUrl: 'https://status.tokbox.com/opentok.json',
