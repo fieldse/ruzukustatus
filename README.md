@@ -1,7 +1,7 @@
 # Ruzuku Status Page (status.ruzuku.com)
 Public facing page to display Ruzuku's system stability
 
-This utilizes gh-pages along with create-react-app in github and publishes to a separate public repository (morebetterlabs.github.io).
+This utilizes gh-pages along with create-react-app and publishes to a separate public repository (morebetterlabs.github.io).
 
 View this at http://status.ruzuku.com
 
