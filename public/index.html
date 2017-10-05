@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link href="%PUBLIC_URL%/styles.css" rel="stylesheet" defer>    
     <link href="%PUBLIC_URL%/headings.css" rel="stylesheet" defer>    
-    <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" defer>     -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" defer>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -22,7 +22,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Ruzuku Status</title>
   </head>
   <body>
     <noscript>
@@ -34,7 +34,7 @@
           <svg viewBox="26 0 448 149" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" class="rz-header__logo">
             <style>
               .logo-letter {
-                fill: #4e4e4e;
+                fill: #fff;
               }
             </style>
             <g>
@@ -55,7 +55,12 @@
         <!-- <span class="rz-footer__credits">
           Icons Created by Icon Depot from the Noun Project
         </span> -->
-        <img src="icons/broken-radio.svg" alt="" class="rz-footer__stamp">
+        <span class="rz-footer__content__follow">
+          <a href="https://twitter.com/RuzukuSupport" class="rz-footer__stamp-link">
+            <img src="%PUBLIC_URL%/icons/twitter.svg" alt="Twitter" class="rz-footer__stamp">
+          </a>
+          Ruzuku Support on Twitter  
+        </span>
       </div>
     </div>
   </body>

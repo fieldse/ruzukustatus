@@ -1,0 +1,16 @@
+.update-list {
+  list-style: none;
+  padding: 0 16px;
+}
+.update-item {
+}
+.update-item__msg {
+  margin-bottom: 0;
+  padding: 0;
+}
+.update-item__date {
+  margin: 0;
+  font-style: italic;
+  font-size: .85em;
+  line-height: 1;
+}

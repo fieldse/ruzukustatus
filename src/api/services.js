@@ -1,5 +1,5 @@
 import { getJson } from './helpers';
-const servicesList = [
+const services = [
   // {
   //   name: 'Amazon Web Services',
   //   statusUrl: 'https://status.aws.amazon.com/data.json',
@@ -63,10 +63,6 @@ function processAWSStatus({current}) {
     name: 'Amazon Web Services',
     status: current.length ? 'issue' : 'ok'
   }
-}
-
-function services() {
-  return servicesList.map( service => service);
 }
 
 export { services, getPlivoStatus, getTokBoxStatus, getFilepickerStatus, getAWSStatus };

@@ -1,58 +1,46 @@
 import React, { Component } from 'react';
 import { services, getPlivoStatus, getTokBoxStatus, getFilepickerStatus } from './api/services';
 import { ServicesList } from './services-list';
-import { Status, StatusUpdates } from './status/index';
-import { updateServiceStatus } from './reducers';
-import { updates } from './status.json';
-import { processDates } from './helpers/process-dates';
+import { StatusBar, StatusUpdates } from './status/index';
+import { updatedServiceState } from './reducers';
+import { processDates, recentUpdate } from './helpers/process-dates';
+import { updates } from './status-updates';
 
 class App extends Component {
   constructor(props) {
     super(props)
+    const updateList = processDates(updates);
     this.state = {
-      updates: [],
-      services: [],
-      components: []
+      updates: updateList,
+      systemStatus: recentUpdate(updates[0]),
+      services: services,
     }
   }
   componentDidMount() {
     this.updateServices();
-    const updateList = processDates(updates);
     this.setState(() => {
       return {
-        updates: updateList,
-        services: services()
+        services: services
+      }
+    })
+  }
+  updateServiceState(service) {
+    this.setState(({services}) => {
+      return {
+        services: updatedServiceState(services, service)
       }
     })
   }
   updateServices() {
-    getPlivoStatus().then(plivo => {
-      this.setState(({services}) => {
-        return {
-          services: updateServiceStatus(services, plivo)
-        }
-      })
-    });
-    getFilepickerStatus().then(service => {
-      this.setState(({services}) => {
-        return {
-          services: updateServiceStatus(services, service)
-        }
-      })
-    });
-    getTokBoxStatus().then(service => {
-      this.setState(({services}) => {
-        return {
-          services: updateServiceStatus(services, service)
-        }
-      })
-    })
+    getPlivoStatus().then(this.updateServiceState.bind(this));
+    getFilepickerStatus().then(this.updateServiceState.bind(this));
+    getTokBoxStatus().then(this.updateServiceState.bind(this))
   }
 
   render() {
     return (
       <div className="rz-content rz-page__content">
-        <Status update={this.state.updates[0]} />
+        <StatusBar update={this.state.systemStatus} />
         <ServicesList services={this.state.services} />
         <StatusUpdates updates={this.state.updates}/>
       </div>
