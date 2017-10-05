@@ -13,8 +13,6 @@ To put up new status.
   2. Update `src/status-upates.js`
   3. `yarn deploy`
 
-*Note: Create React App Uses a service worker so if it didn't update after deploy, it's probably your cache*
-
 ## URL
 We were not able get https running but if that becomes necessary https://morebetterlabs.github.io will suffice. To enact this change
 - Remove CNAME record for status.ruzuku.com from Rackspace
