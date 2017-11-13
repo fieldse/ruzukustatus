@@ -6,17 +6,20 @@ const services = [
   //   status: 'loading'
   // },
   {
+    title: 'TokBox (webinars)',
     name: 'TokBox',
     statusUrl: 'https://status.tokbox.com/opentok.json',
     status: 'loading'
   },
   {
+    title: 'Plivo (teleconference)',
     name: 'Plivo',
     statusUrl: 'https://status.plivo.com/history.json',
     status: 'loading'
   },
   {
     name: 'Filestack',
+    title: 'Filestack (file uploads)',
     statusUrl: 'https://status.filestack.com/history.json',
     status: 'loading'
   }
@@ -52,6 +55,7 @@ function processStatusPage({page_status, components}) {
   let issues = components.filter( component => {
     return component.status !== 'operational';
   });
+  console.log(page_status.page)
   return {
     name: page_status.page.name,
     status: issues.length ? 'issue' : 'ok'

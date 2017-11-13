@@ -4,9 +4,9 @@ function ServicesList({ services = [] }) {
   return (
     <ul className="rz-external-services">
       <h3 className="rz-external-services__header rz-section-heading">External Services</h3>
-      { services.map( ({status, name}, i) => {
+      { services.map( ({status, title}, i) => {
         return (
-          <li key={i} { ...statusAttributes(status) }>{ name }</li>
+          <li key={i} { ...statusAttributes(status) }>{ title }</li>
         )
       })}
     </ul>

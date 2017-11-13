@@ -143,6 +143,8 @@ body {
   display: inline-block;
   height: 24px;
   margin-right: 8px;
+  position: relative;
+  top: -2px;
 }
 .rz-footer__stamp-link {
   text-decoration: none;
