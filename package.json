@@ -2,7 +2,7 @@
   "name": "ruzstatus",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://morebetterlabs.github.io",
+  "homepage": "http://status.ruzuku.com",
   "dependencies": {
     "gh-pages": "^1.0.0",
     "moment": "^2.18.1",
