@@ -11,9 +11,5 @@ clone repo and then yarn install
 To put up new status.
   1. `yarn start`
   2. Update `src/status-upates.js`
-  3. `yarn deploy`
-
-## URL
-We were not able get https running but if that becomes necessary https://morebetterlabs.github.io will suffice. To enact this change
-- Remove CNAME record for status.ruzuku.com from Rackspace
-- Go into settings for this repo and remove custom url
+  3. Save and commit changes
+  4. `yarn deploy`
