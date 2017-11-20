@@ -55,7 +55,6 @@ function processStatusPage({page_status, components}) {
   let issues = components.filter( component => {
     return component.status !== 'operational';
   });
-  console.log(page_status.page)
   return {
     name: page_status.page.name,
     status: issues.length ? 'issue' : 'ok'
