@@ -25,8 +25,8 @@ function UpdateList({updates}) {
   return updates.map( (update, i) => {
     return (
       <li key={i} className="rz-status-updates__list-item update-item">
-        <p class="update-item__msg">{update.title}</p> 
-        <p class="update-item__date">{update.date}</p>
+        <p className="update-item__msg">{update.title}</p> 
+        <p className="update-item__date">{update.date}</p>
       </li>
     )
   });

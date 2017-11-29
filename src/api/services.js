@@ -5,18 +5,18 @@ const services = [
   //   statusUrl: 'https://status.aws.amazon.com/data.json',
   //   status: 'loading'
   // },
-  {
-    title: 'Box (document viewer)',
-    name: 'Box',
-    statusUrl: 'https://status.box.com/history.json',
-    status: 'loading'
-  },
   // {
   //   title: 'TokBox (webinars)',
   //   name: 'TokBox',
   //   statusUrl: 'https://status.tokbox.com/opentok.json',
   //   status: 'loading'
   // },
+  {
+    title: 'Box (document viewer)',
+    name: 'Box',
+    statusUrl: 'https://status.box.com/history.json',
+    status: 'loading'
+  },
   {
     title: 'Plivo (teleconference)',
     name: 'Plivo',
@@ -31,18 +31,9 @@ const services = [
   }
 ]
 
-async function getPlivoStatus() {
-  return await getJson('https://status.plivo.com/history.json')
-    .then(processStatusPage)
-}
-
-async function getFilepickerStatus() {
-  return await getJson('https://status.filestack.com/history.json')
-    .then(processStatusPage)
-}
-
-async function getBoxStatus() {
-  return await getJson('https://status.box.com/history.json')
+async function updateService({name, statusUrl}) {
+  console.log(name, statusUrl)
+  return await getJson(statusUrl)
     .then(processStatusPage)
 }
 
@@ -79,4 +70,4 @@ function processAWSStatus({current}) {
   }
 }
 
-export { services, getPlivoStatus, getTokBoxStatus, getFilepickerStatus, getAWSStatus, getBoxStatus };
+export { services, processStatusPage, updateService, getTokBoxStatus, getAWSStatus };
