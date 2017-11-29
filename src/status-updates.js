@@ -10,5 +10,4 @@
 */
 const updates = [];
 
-
 export { updates };

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { services, getPlivoStatus, getTokBoxStatus, getFilepickerStatus } from './api/services';
+import { services, getPlivoStatus, getTokBoxStatus, getFilepickerStatus, getBoxStatus } from './api/services';
 import { ServicesList } from './services-list';
 import { StatusBar, StatusUpdates } from './status/index';
 import { updatedServiceState } from './reducers';
@@ -34,7 +34,8 @@ class App extends Component {
   updateServices() {
     getPlivoStatus().then(this.updateServiceState.bind(this));
     getFilepickerStatus().then(this.updateServiceState.bind(this));
-    getTokBoxStatus().then(this.updateServiceState.bind(this))
+    getTokBoxStatus().then(this.updateServiceState.bind(this));
+    getBoxStatus().then(this.updateServiceState.bind(this));
   }
 
   render() {
