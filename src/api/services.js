@@ -6,11 +6,17 @@ const services = [
   //   status: 'loading'
   // },
   {
-    title: 'TokBox (webinars)',
-    name: 'TokBox',
-    statusUrl: 'https://status.tokbox.com/opentok.json',
+    title: 'Box (document viewer)',
+    name: 'Box',
+    statusUrl: 'https://status.box.com/history.json',
     status: 'loading'
   },
+  // {
+  //   title: 'TokBox (webinars)',
+  //   name: 'TokBox',
+  //   statusUrl: 'https://status.tokbox.com/opentok.json',
+  //   status: 'loading'
+  // },
   {
     title: 'Plivo (teleconference)',
     name: 'Plivo',
@@ -32,6 +38,11 @@ async function getPlivoStatus() {
 
 async function getFilepickerStatus() {
   return await getJson('https://status.filestack.com/history.json')
+    .then(processStatusPage)
+}
+
+async function getBoxStatus() {
+  return await getJson('https://status.box.com/history.json')
     .then(processStatusPage)
 }
 
@@ -68,4 +79,4 @@ function processAWSStatus({current}) {
   }
 }
 
-export { services, getPlivoStatus, getTokBoxStatus, getFilepickerStatus, getAWSStatus };
+export { services, getPlivoStatus, getTokBoxStatus, getFilepickerStatus, getAWSStatus, getBoxStatus };
