@@ -10,7 +10,7 @@
 */
 const updates = [{
   "date": "11-29-2017",
-  "title": "PDF support is currently down.",
+  "title": "PDF support is down. This affects webinar presentations as well as lesson content in your courses.",
   "status": "down",
 }];
 
