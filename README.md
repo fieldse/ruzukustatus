@@ -1,3 +1,10 @@
+## DEFUNCT
+
+This is now defunct, just leaving the code here.
+
+------------------
+
+
 # Ruzuku Status Page (status.ruzuku.com)
 Public facing page to display Ruzuku's system stability
 
